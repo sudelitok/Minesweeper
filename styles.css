@@ -1,0 +1,184 @@
+
+:root{ /* root defines all other elements globally?*/
+    --title-color: #85acc2;
+    --footer-color: #6284af;
+    --background-color: rgb(72, 68, 68);
+    --shadowsize: 4px;
+    --shadowcolor: #464343;
+    --highlightcolor: #ece3e3;
+}
+
+*{ /* * matches with every element*/ 
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    height: 100%;
+}
+.content{
+    width: min(100vw, 55vh);
+    height: min(100vh, 180vw);
+    background-color: orange;
+    margin: 0 auto; /* first one is for top and bottom, second one is for left to right(horizontally centered)*/
+}
+
+header{
+    height: 22.2%;
+    background-color: var(--title-color);
+    color: black;
+    background-image: url(images/header_image.jpg);
+    background-size: cover;
+}
+
+#playfield{  /* # is an id selector*/
+    height: 55.6%;
+    background-color: var(--background-color);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    position: relative;
+}
+
+#buttonbar{
+    height: 16.7%;
+    background-color: var(--title-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer{
+    height: 5.5%;
+    background-color: var(--footer-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cell{
+    width: calc((100% / 9) - 1 - (2 * var(--shadowsize))); 
+    height: calc((100% / 9) - 1 - (2 * var(--shadowsize)));
+    background-color: lightgray;
+    flex-shrink: 0;
+    border: var(--shadowsize) solid transparent;
+}
+
+header div h1{
+    font-size: min(15vw, 250%);
+    font-style: oblique;
+    position: relative;
+    left: 10px;
+}
+
+header div h2{
+    font-size: min(6vw, 100%);
+    font-style: oblique;
+    position: relative;
+    left: 10px;
+}
+
+footer div{
+    position: relative;
+    left: 10px;
+}
+
+.covered{
+    border-top: var(--shadowsize) solid var(--highlightcolor);
+    border-left: var(--shadowsize) solid var(--highlightcolor);
+    border-bottom: var(--shadowsize) solid var(--shadowcolor);
+    border-right: var(--shadowsize) solid var(--shadowcolor);
+}
+
+
+.cellsymbol1, .cellsymbol2, .cellsymbol3, .cellsymbol4, .cellsymbol5, .cellsymbol6, .cellsymbol7, .cellsymbol8, .f, .m{
+    background-image: url("images/symbols.svg");
+    background-size: 1000% 100%;
+    background-repeat: no-repeat;
+}
+
+.cellsymbol1{
+    background-position: 0%;
+}
+.cellsymbol2{
+    background-position: 11%;
+}
+.cellsymbol3{
+    background-position: 22%;
+}
+
+.cellsymbol4{
+    background-position: 33%;
+}
+
+.cellsymbol5{
+    background-position: 44%;
+}
+
+.cellsymbol6{
+    background-position: 55%;
+}
+
+.cellsymbol7{
+    background-position: 66%;
+}
+
+.cellsymbol8{
+    background-position: 77%;
+}
+
+.f{
+    background-position: 88%; 
+}
+
+.m{
+    background-position: 100%;
+}
+
+.button{
+    width: 30%;
+    height: 50%;
+    font-size: min(6vw, 100%);
+    border-radius: 15px;
+    border-width: thin;
+}
+
+.mineHit{
+   background-color: red; 
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textHolder{
+    border: 0.1px solid black;
+    padding: 5px;
+    font-size: 300%;
+    text-align: center;
+    background-color: white;
+    border-radius: 15px;
+    flex-shrink: 0;
+}
+
+#playfield:hover .overlay{
+    display: flex;
+}
+
+#playfield:not(:hover) .overlay{
+    display: none;
+}
+
+
+
+
+
